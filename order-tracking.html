@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Order Status | SAVIAA Tailoring Boutique</title>
+  <meta name="description" content="Track your custom stitching order progress timeline from fabric cutting to stitching and shipment delivery.">
+  <link rel="canonical" href="https://saviaa.com/order-tracking.html">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">SAVIAA<span>.</span></a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="custom-blouses.html" class="nav-link">Custom Blouses</a></li>
+          <li><a href="ready-made.html" class="nav-link">Ready-made Shop</a></li>
+          <li><a href="measurement-guide.html" class="nav-link">Size Guide</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="dashboard.html" class="nav-btn" aria-label="My Account">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+        <a href="ready-made.html" class="nav-btn" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="nav-badge wishlist-badge" style="display: none;">0</span>
+        </a>
+        <a href="cart.html" class="nav-btn" aria-label="Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="nav-badge cart-badge" style="display: none;">0</span>
+        </a>
+        <a href="admin.html" class="nav-btn" style="background-color: var(--secondary); color: var(--primary);" aria-label="Admin Portal">CRM</a>
+        <button class="nav-btn menu-toggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav-panel">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="custom-blouses.html" class="mobile-nav-link">Custom Blouses</a></li>
+      <li><a href="ready-made.html" class="mobile-nav-link">Ready-made Shop</a></li>
+      <li><a href="measurement-guide.html" class="mobile-nav-link">Size Guide</a></li>
+      <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="section-padding">
+      <div class="container" style="max-width: 900px;">
+        
+        <div class="card" style="padding: var(--spacing-md); text-align: center; margin-bottom: var(--spacing-md);">
+          <span class="text-caption">Tracking Order</span>
+          <h1 id="order-title-label" style="font-size: var(--fs-h2); line-height: 1.2;">Order: SAV-1823</h1>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Stitching Facility: Pendurthi Workshop, Visakhapatnam</p>
+        </div>
+
+        <!-- 9-Stage Progress Timeline -->
+        <div class="tracking-9-timeline" id="tracking-timeline-grid">
+          
+          <div class="tracking-9-step" id="step-0">
+            <div class="tracking-9-circle">1</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Confirmed</span>
+              <span class="tracking-9-desc">Order placed</span>
+            </div>
+          </div>
+
+          <div class="tracking-9-step" id="step-1">
+            <div class="tracking-9-circle">2</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Sizing</span>
+              <span class="tracking-9-desc">Sizes verified</span>
+            </div>
+          </div>
+
+          <div class="tracking-9-step" id="step-2">
+            <div class="tracking-9-circle">3</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Cutting</span>
+              <span class="tracking-9-desc">Fabric cut</span>
+            </div>
+          </div>
+
+          <div class="tracking-9-step" id="step-3">
+            <div class="tracking-9-circle">4</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Stitching</span>
+              <span class="tracking-9-desc">Tailoring active</span>
+            </div>
+          </div>
+
+          <div class="tracking-9-step" id="step-4">
+            <div class="tracking-9-circle">5</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Quality</span>
+              <span class="tracking-9-desc">Piping & fits OK</span>
+            </div>
+          </div>
+
+          <div class="tracking-9-step" id="step-5">
+            <div class="tracking-9-circle">6</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Packing</span>
+              <span class="tracking-9-desc">Steam pressed</span>
+            </div>
+          </div>
+
+          <div class="tracking-9-step" id="step-6">
+            <div class="tracking-9-circle">7</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Shipped</span>
+              <span class="tracking-9-desc">In transit</span>
+            </div>
+          </div>
+
+          <div class="tracking-9-step" id="step-7">
+            <div class="tracking-9-circle">8</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Out Delivery</span>
+              <span class="tracking-9-desc">Out with courier</span>
+            </div>
+          </div>
+
+          <div class="tracking-9-step" id="step-8">
+            <div class="tracking-9-circle">9</div>
+            <div class="tracking-9-content">
+              <span class="tracking-9-title">Delivered</span>
+              <span class="tracking-9-desc">Fitting complete</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Detailed Summary card -->
+        <div class="card" style="padding: var(--spacing-md); margin-top: var(--spacing-md);">
+          <h3 style="margin-bottom: var(--spacing-xs);">Stitching Facility Log Updates</h3>
+          <div style="font-size: 0.85rem; line-height: 1.6; color: var(--text-muted);" id="tracking-logs-content">
+            <!-- Updates listed dynamically -->
+          </div>
+          
+          <div style="margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1rem;" class="flex-between">
+            <a href="dashboard.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Back to Account</a>
+            <a href="https://wa.me/917842410691?text=Hello%20SAVIAA%2C%20I%20need%20help%20tracking%20my%20order." class="btn btn-accent" style="padding: 0.5rem 1rem;" target="_blank">Chat on WhatsApp</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initTracking();
+    });
+
+    function initTracking() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = urlParams.get('order_id') || 'SAV-MOCK';
+
+      // Load orders database
+      const orders = JSON.parse(localStorage.getItem('saviaa_orders') || '[]');
+      let activeOrder = orders.find(o => o.id === orderId);
+
+      if (!activeOrder) {
+        // Fallback mockup
+        activeOrder = {
+          id: orderId,
+          total: '2,850',
+          status: 'Tailoring',
+          date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+        };
+      }
+
+      document.getElementById('order-title-label').textContent = `Order Status: ${activeOrder.id}`;
+
+      // Mapping order status word string into step index (0 to 8)
+      // Stages: Confirmed(0), Sizing(1), Cutting(2), Stitching(3), Quality(4), Packing(5), Shipped(6), Out Delivery(7), Delivered(8)
+      let activeStepIndex = 0;
+      const statusClean = (activeOrder.status || 'processing').toLowerCase();
+
+      if (statusClean === 'processing') {
+        activeStepIndex = 1; // Sizing / Verification stage
+      } else if (statusClean === 'cutting') {
+        activeStepIndex = 2; // Cutting
+      } else if (statusClean === 'tailoring' || statusClean === 'stitching') {
+        activeStepIndex = 3; // Stitching
+      } else if (statusClean === 'qualitycheck' || statusClean === 'quality') {
+        activeStepIndex = 4; // Quality Check
+      } else if (statusClean === 'packing') {
+        activeStepIndex = 5;
+      } else if (statusClean === 'shipped') {
+        activeStepIndex = 6;
+      } else if (statusClean === 'delivered') {
+        activeStepIndex = 8;
+      }
+
+      // Loop steps and color them
+      for (let i = 0; i <= 8; i++) {
+        const stepNode = document.getElementById(`step-${i}`);
+        if (!stepNode) continue;
+
+        if (i < activeStepIndex) {
+          stepNode.classList.add('completed');
+        } else if (i === activeStepIndex) {
+          stepNode.classList.add('active');
+        }
+      }
+
+      // Render details log entries
+      const logs = document.getElementById('tracking-logs-content');
+      if (logs) {
+        let entries = ``;
+        if (activeStepIndex >= 0) entries += `<p>✓ <strong>Order Received</strong> - Stitching requests recorded. (Date: ${activeOrder.date})</p>`;
+        if (activeStepIndex >= 1) entries += `<p>✓ <strong>Measurements Checked</strong> - Fit profile matched. Sizing verified by Master Cutter.</p>`;
+        if (activeStepIndex >= 2) entries += `<p>✓ <strong>Fabric Cutting Complete</strong> - Premium raw silk fabric outlined and cut.</p>`;
+        if (activeStepIndex >= 3) entries += `<p>⏳ <strong>Stitching Stage Active</strong> - Handcrafted tailoring underway at Visakhapatnam workshop.</p>`;
+        if (activeStepIndex >= 4) entries += `<p>✓ <strong>Quality Check Done</strong> - Sleeve armholes, necklines hooks check completed.</p>`;
+        if (activeStepIndex >= 6) entries += `<p>✓ <strong>Handed over to Ship Courier</strong> - Transit ID generated. ETA: 24 hours.</p>`;
+        if (activeStepIndex === 8) entries += `<p>✓ <strong>Fitting Delivered Successfully</strong> - Package received at customer doorstep.</p>`;
+        
+        logs.innerHTML = entries || `<p>Loading status logs...</p>`;
+      }
+    }
+  </script>
+</body>
+</html>

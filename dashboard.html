@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Portal Dashboard | SAVIAA</title>
+  <meta name="description" content="Manage your custom blouse orders, book measurements, track stitching statuses, view rewards, and edit sizing profiles on SAVIAA.">
+  <link rel="canonical" href="https://saviaa.com/dashboard.html">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">SAVIAA<span>.</span></a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="custom-blouses.html" class="nav-link">Custom Blouses</a></li>
+          <li><a href="ready-made.html" class="nav-link">Ready-made Shop</a></li>
+          <li><a href="measurement-guide.html" class="nav-link">Size Guide</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="dashboard.html" class="nav-btn active" aria-label="My Account">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+        <a href="ready-made.html" class="nav-btn" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="nav-badge wishlist-badge" style="display: none;">0</span>
+        </a>
+        <a href="cart.html" class="nav-btn" aria-label="Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="nav-badge cart-badge" style="display: none;">0</span>
+        </a>
+        <a href="admin.html" class="nav-btn" style="background-color: var(--secondary); color: var(--primary);" aria-label="Admin Portal">CRM</a>
+        <button class="nav-btn menu-toggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav-panel">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="custom-blouses.html" class="mobile-nav-link">Custom Blouses</a></li>
+      <li><a href="ready-made.html" class="mobile-nav-link">Ready-made Shop</a></li>
+      <li><a href="measurement-guide.html" class="mobile-nav-link">Size Guide</a></li>
+      <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <section class="section-padding">
+      <div class="container">
+        
+        <!-- Welcome User Row -->
+        <div class="flex-between" style="border-bottom: 1px solid var(--border); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-sm); flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h1 style="font-size: var(--fs-h2); line-height: 1.2;" id="welcome-user-label">Namaste, Sravani</h1>
+            <p style="font-size: var(--fs-body-sm); color: var(--text-muted);">Welcome back to your tailoring dashboard.</p>
+          </div>
+          <button class="btn btn-outline" onclick="localStorage.removeItem('saviaa_user'); window.location.href='login.html';" style="padding: 0.5rem 1rem;">Logout</button>
+        </div>
+
+        <div class="dashboard-layout">
+          <!-- Left Sidebar Tabs Navigation -->
+          <aside class="dashboard-sidebar" aria-label="Dashboard Sidebar navigation">
+            <button class="btn dashboard-tab-btn active" data-tab="overview">👤 Profile Overview</button>
+            <button class="btn dashboard-tab-btn" data-tab="orders">📦 My Orders</button>
+            <button class="btn dashboard-tab-btn" data-tab="appointments">📅 Appointments</button>
+            <button class="btn dashboard-tab-btn" data-tab="designs">🎨 Saved Designs</button>
+            <button class="btn dashboard-tab-btn" data-tab="measurements">📏 Measurements</button>
+            <button class="btn dashboard-tab-btn" data-tab="tickets">🎫 Help Tickets</button>
+            <button class="btn dashboard-tab-btn" data-tab="returns">🛠️ Alterations</button>
+          </aside>
+
+          <!-- Right Content Area -->
+          <div class="dashboard-main">
+            
+            <!-- OVERVIEW PANEL -->
+            <div class="dashboard-section active" id="sec-overview">
+              <div class="rewards-status-box" style="margin-bottom: var(--spacing-md);">
+                <div>
+                  <h3 style="font-size: 1.15rem; color: #fff;">Saviaa Reward Points</h3>
+                  <p style="font-size: 0.85rem; color: rgba(255,255,255,0.85);">You have accrued <strong>1,250 points</strong> (Value: ₹125 discount)</p>
+                </div>
+                <span class="card-badge" style="background-color: var(--bg-white); color: var(--primary); font-weight: 700; font-size: 0.8rem; padding: 6px 12px;">Tier: Silver Elite</span>
+              </div>
+
+              <!-- Profile Completion Bar -->
+              <div class="card" style="padding: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+                <div class="flex-between" style="font-size: 0.85rem; margin-bottom: 4px;">
+                  <span>Profile Completion</span>
+                  <span style="font-weight: 700;">85% Completed</span>
+                </div>
+                <div style="background-color: var(--secondary); height: 10px; border-radius: var(--radius-pill); overflow: hidden;">
+                  <div style="background-color: var(--primary); width: 85%; height: 100%; border-radius: var(--radius-pill);"></div>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">Add your custom body measurements to hit 100% and get free express tailoring!</p>
+              </div>
+
+              <!-- Active Stats Cards -->
+              <div class="grid-12" style="gap: var(--spacing-sm);">
+                <div class="col-span-12 sm:col-span-6 admin-card" style="grid-column: span 6;">
+                  <div class="admin-card-icon">📦</div>
+                  <div>
+                    <h4 class="admin-card-value" id="stats-active-orders">1</h4>
+                    <span class="admin-card-label">Active Orders</span>
+                  </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 admin-card" style="grid-column: span 6;">
+                  <div class="admin-card-icon">📅</div>
+                  <div>
+                    <h4 class="admin-card-value">1 Upcoming</h4>
+                    <span class="admin-card-label">Doorstep Tailor Visit</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ORDERS PANEL -->
+            <div class="dashboard-section" id="sec-orders">
+              <h2 style="font-size: 1.35rem; margin-bottom: var(--spacing-sm);">Stitching & E-commerce Orders</h2>
+              <div class="table-responsive">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Item Description</th>
+                      <th>Date</th>
+                      <th>Billing Total</th>
+                      <th>Progress Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="orders-dashboard-list">
+                    <!-- Populated dynamically via JS orders -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- APPOINTMENTS PANEL -->
+            <div class="dashboard-section" id="sec-appointments">
+              <h2 style="font-size: 1.35rem; margin-bottom: var(--spacing-sm);">Scheduled Consultations</h2>
+              <div class="card" style="padding: var(--spacing-sm); display: flex; flex-direction: column; gap: var(--spacing-xs); border-left: 4px solid var(--primary);">
+                <div class="flex-between">
+                  <span class="card-badge" style="background-color: var(--secondary); color: var(--primary);">Doorstep Tailor Visit</span>
+                  <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">Confirmed</span>
+                </div>
+                <h3 style="font-size: 1.15rem; margin: 4px 0;">Home Fitting Measurement (Visakhapatnam)</h3>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">
+                  📅 Date: <strong style="color: var(--dark);" id="appoint-date-label">Jul 22, 2026</strong> | ⏰ Time: <strong style="color: var(--dark);" id="appoint-time-label">10:00 AM - 12:00 PM</strong>
+                </p>
+                <p style="font-size: 0.8rem;">📍 Address: Sector 3, MVP Colony, Visakhapatnam, AP, 530017.</p>
+                
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                  <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem;" onclick="openRescheduleModal()">Reschedule Date</button>
+                  <button class="btn btn-text" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; color: red;" onclick="if(confirm('Cancel appointment?')) showToast('Appointment cancelled.');">Cancel Booking</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- SAVED DESIGNS PANEL -->
+            <div class="dashboard-section" id="sec-designs">
+              <h2 style="font-size: 1.35rem; margin-bottom: var(--spacing-sm);">Your Customizer Blouse Drafts</h2>
+              <div class="grid-12" id="saved-designs-grid" style="gap: var(--spacing-sm);">
+                <!-- Load saved draft card -->
+              </div>
+            </div>
+
+            <!-- MEASUREMENTS PANEL -->
+            <div class="dashboard-section" id="sec-measurements">
+              <h2 style="font-size: 1.35rem; margin-bottom: var(--spacing-sm);">Your Custom Body Profile</h2>
+              <p style="font-size: 0.85rem; margin-bottom: var(--spacing-sm);">These values are saved to auto-fill custom sizing measurements on future designs.</p>
+              
+              <form id="measurement-profile-form" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--spacing-sm);">
+                <div class="form-group">
+                  <label for="measure-bust" class="form-label">Around Bust (inches)</label>
+                  <input type="number" id="measure-bust" class="form-input" value="36">
+                </div>
+                <div class="form-group">
+                  <label for="measure-waist" class="form-label">Under Bust Waist (inches)</label>
+                  <input type="number" id="measure-waist" class="form-input" value="30">
+                </div>
+                <div class="form-group">
+                  <label for="measure-neck" class="form-label">Front Neckline Deep (inches)</label>
+                  <input type="number" id="measure-neck" class="form-input" value="6.5">
+                </div>
+                <div class="form-group">
+                  <label for="measure-sleeves" class="form-label">Sleeve Length (inches)</label>
+                  <input type="number" id="measure-sleeves" class="form-input" value="11">
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Save Sizing Profile</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- HELP TICKETS PANEL -->
+            <div class="dashboard-section" id="sec-tickets">
+              <h2 style="font-size: 1.35rem; margin-bottom: var(--spacing-sm);">Active Tickets & Queries</h2>
+              <div class="card" style="padding: var(--spacing-sm); border-left: 4px solid var(--accent); margin-bottom: var(--spacing-sm);">
+                <div class="flex-between">
+                  <span style="font-weight: 700; font-size: 0.85rem; color: var(--dark);">#TKT-1082: Stitching fit modification</span>
+                  <span class="status-badge status-processing">Pending Response</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">"Requesting minor adjustments to sleeves depth. Neck U shape is correct."</p>
+              </div>
+
+              <div class="card" style="padding: var(--spacing-md);">
+                <h3>File a new Support Ticket</h3>
+                <form id="support-ticket-form" style="display: flex; flex-direction: column; gap: var(--spacing-xs); margin-top: 0.5rem;">
+                  <div class="form-group">
+                    <label for="ticket-subject" class="form-label">Subject</label>
+                    <input type="text" id="ticket-subject" class="form-input" placeholder="e.g. Saree fabric dropoff issue">
+                  </div>
+                  <div class="form-group">
+                    <label for="ticket-message" class="form-label">Message Details</label>
+                    <textarea id="ticket-message" class="form-input" style="min-height: 80px;" placeholder="Describe your query or modifications required..."></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-dark" style="align-self: flex-start; padding: 0.5rem 1rem;">Submit Ticket</button>
+                </form>
+              </div>
+            </div>
+
+            <!-- ALTERATIONS PANEL -->
+            <div class="dashboard-section" id="sec-returns">
+              <h2 style="font-size: 1.35rem; margin-bottom: var(--spacing-sm);">Request Alteration or Refund</h2>
+              <p style="font-size: 0.85rem; margin-bottom: var(--spacing-sm);">Saviaa offers 100% free lifetime fit alterations. Submit details to book a doorstep pick-up in Vizag.</p>
+
+              <form id="alteration-request-form" style="display: flex; flex-direction: column; gap: var(--spacing-xs); max-width: 500px;">
+                <div class="form-group">
+                  <label for="alt-order-id" class="form-label">Order ID</label>
+                  <input type="text" id="alt-order-id" class="form-input" placeholder="e.g. SAV-1083">
+                </div>
+                <div class="form-group">
+                  <label for="alt-type" class="form-label">Reason for Request</label>
+                  <select id="alt-type" class="form-input" aria-label="Select alteration reason">
+                    <option value="alter-sleeve">Sleeves too loose / tight</option>
+                    <option value="alter-bust">Bust dimensions tight</option>
+                    <option value="alter-neck">Neck shape adjustment</option>
+                    <option value="return-refund">Request full return / refund</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="alt-notes" class="form-label">Describe Sizing Issue</label>
+                  <textarea id="alt-notes" class="form-input" style="min-height: 80px;" placeholder="e.g. Sleeves are loose by 0.5 inches. Please tighten..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-accent" style="align-self: flex-start; padding: 0.75rem 1.5rem;">Request Doorstep Alteration</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reschedule Dialog Modal -->
+  <dialog id="reschedule-modal" class="card">
+    <div class="dialog-header">
+      <h3 style="font-size: 1.15rem;">Reschedule Appointment</h3>
+      <button class="dialog-close" onclick="document.getElementById('reschedule-modal').close()">&times;</button>
+    </div>
+    <form id="reschedule-form" style="display: flex; flex-direction: column; gap: var(--spacing-sm);">
+      <div class="form-group">
+        <label for="resched-date" class="form-label">New Date</label>
+        <input type="date" id="resched-date" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="resched-slot" class="form-label">New Time Slot</label>
+        <select id="resched-slot" class="form-input" required aria-label="Select new slot">
+          <option value="10:00 AM - 12:00 PM">Morning (10:00 AM - 12:00 PM)</option>
+          <option value="12:00 PM - 02:00 PM">Noon (12:00 PM - 02:00 PM)</option>
+          <option value="03:00 PM - 05:00 PM">Afternoon (03:00 PM - 05:00 PM)</option>
+          <option value="06:00 PM - 08:00 PM">Evening (06:00 PM - 08:00 PM)</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-accent" style="width: 100%;">Confirm Reschedule</button>
+    </form>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-title">SAVIAA.</span>
+        <p class="footer-desc">Premium custom tailoring boutique. Pendurthi, Visakhapatnam.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Tab switching logic
+    const tabBtns = document.querySelectorAll('.dashboard-tab-btn');
+    const sections = document.querySelectorAll('.dashboard-section');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const tabName = btn.dataset.tab;
+        sections.forEach(sec => {
+          sec.classList.toggle('active', sec.id === `sec-${tabName}`);
+        });
+      });
+    });
+
+    // Populate active orders from local storage
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mock logged-in user check
+      let user = JSON.parse(localStorage.getItem('saviaa_user'));
+      if (!user) {
+        // Redirect to login if user not mock authenticated
+        localStorage.setItem('saviaa_user', JSON.stringify({ name: 'Sravani P.', email: 'sravani@gmail.com' }));
+        user = { name: 'Sravani P.' };
+      }
+      
+      const welcome = document.getElementById('welcome-user-label');
+      if (welcome) welcome.textContent = `Namaste, ${user.name.split(' ')[0]}`;
+
+      renderDashboardOrders();
+      renderDashboardSavedDesigns();
+      loadMeasurementProfile();
+    });
+
+    function renderDashboardOrders() {
+      const ordersList = document.getElementById('orders-dashboard-list');
+      const activeCount = document.getElementById('stats-active-orders');
+      if (!ordersList) return;
+
+      const orders = JSON.parse(localStorage.getItem('saviaa_orders') || '[]');
+      ordersList.innerHTML = '';
+
+      if (orders.length === 0) {
+        ordersList.innerHTML = `
+          <tr>
+            <td colspan="6" style="text-align: center; padding: 2rem;">No orders placed yet.</td>
+          </tr>
+        `;
+        if (activeCount) activeCount.textContent = '0';
+        return;
+      }
+
+      if (activeCount) activeCount.textContent = orders.length;
+
+      orders.forEach(o => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${o.id}</strong></td>
+          <td>${o.items ? o.items.map(i => i.name).join(', ') : 'Custom Blouse Stitching'}</td>
+          <td>${o.date || 'Today'}</td>
+          <td style="font-weight: 700; color: var(--primary);">₹${o.total}</td>
+          <td><span class="status-badge status-${(o.status || 'processing').toLowerCase()}">${o.status || 'Processing'}</span></td>
+          <td>
+            <a href="order-tracking.html?order_id=${o.id}" class="btn btn-outline" style="padding: 2px 8px; font-size: 0.7rem; border-radius: 4px;">Track Stage &rarr;</a>
+          </td>
+        `;
+        ordersList.appendChild(tr);
+      });
+    }
+
+    function renderDashboardSavedDesigns() {
+      const grid = document.getElementById('saved-designs-grid');
+      if (!grid) return;
+
+      const draftRaw = localStorage.getItem('saviaa_custom_draft');
+      grid.innerHTML = '';
+
+      if (!draftRaw) {
+        grid.innerHTML = `
+          <div style="grid-column: span 12; text-align:center; padding: 2rem;">
+            <p style="color: var(--text-muted); font-size: 0.85rem;">No saved drafts. Start customizing a blouse!</p>
+            <a href="customization-studio.html" class="btn btn-outline" style="margin-top:0.5rem; font-size:0.75rem; padding: 6px 12px;">Open Studio</a>
+          </div>
+        `;
+        return;
+      }
+
+      const d = JSON.parse(draftRaw);
+      const card = document.createElement('div');
+      card.className = 'card col-span-12 sm:col-span-6 md:col-span-4 reveal-on-scroll';
+      card.style.gridColumn = 'span 4';
+      card.innerHTML = `
+        <div class="card-img-wrapper" style="aspect-ratio: 1.2;">
+          <img class="card-img" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=300" alt="Draft Blouse">
+        </div>
+        <div class="card-body" style="padding: 10px;">
+          <h4 style="font-size:0.85rem; font-weight:600;">Draft: ${d.fabric.split(' (')[0]} Blouse</h4>
+          <p style="font-size:0.75rem; color:var(--text-muted);">${d.neck} • ${d.sleeves} • ${d.colorName}</p>
+          <a href="customization-studio.html" class="btn btn-accent" style="width:100%; font-size:0.75rem; padding: 4px 8px; justify-content:center; margin-top:0.5rem;">Resume Editing</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    }
+
+    function loadMeasurementProfile() {
+      const profile = JSON.parse(localStorage.getItem('saviaa_measurements'));
+      if (!profile) return;
+
+      const bust = document.getElementById('measure-bust');
+      const waist = document.getElementById('measure-waist');
+      const neck = document.getElementById('measure-neck');
+      const sleeves = document.getElementById('measure-sleeves');
+
+      if (bust) bust.value = profile.bust || 36;
+      if (waist) waist.value = profile.waist || 30;
+      if (neck) neck.value = profile.neck || 6.5;
+      if (sleeves) sleeves.value = profile.sleeves || 11;
+    }
+
+    // Save sizing profile
+    const profileForm = document.getElementById('measurement-profile-form');
+    if (profileForm) {
+      profileForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const profile = {
+          bust: document.getElementById('measure-bust').value,
+          waist: document.getElementById('measure-waist').value,
+          neck: document.getElementById('measure-neck').value,
+          sleeves: document.getElementById('measure-sleeves').value
+        };
+        localStorage.setItem('saviaa_measurements', JSON.stringify(profile));
+        showToast("Measurements profile updated successfully!", "success");
+      });
+    }
+
+    // Support Form submit mock
+    const tktForm = document.getElementById('support-ticket-form');
+    if (tktForm) {
+      tktForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        showToast("Ticket submitted. A designer will contact you on WhatsApp.");
+        tktForm.reset();
+      });
+    }
+
+    // Alterations Form submit mock
+    const altForm = document.getElementById('alteration-request-form');
+    if (altForm) {
+      altForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        showToast("Alteration request submitted. Pick-up scheduled in MVP Colony.");
+        altForm.reset();
+      });
+    }
+
+    // Reschedule Modals functions
+    const reschedDialog = document.getElementById('reschedule-modal');
+    function openRescheduleModal() {
+      if (reschedDialog) reschedDialog.showModal();
+    }
+
+    const reschedForm = document.getElementById('reschedule-form');
+    if (reschedForm) {
+      reschedForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const dateVal = document.getElementById('resched-date').value;
+        const slotVal = document.getElementById('resched-slot').value;
+
+        // format date
+        const formattedDate = new Date(dateVal).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        
+        document.getElementById('appoint-date-label').textContent = formattedDate;
+        document.getElementById('appoint-time-label').textContent = slotVal;
+
+        showToast("Appointment successfully rescheduled!");
+        reschedDialog.close();
+      });
+    }
+  </script>
+</body>
+</html>

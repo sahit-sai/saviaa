@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Reader | SAVIAA Custom Stitching Insights</title>
+  <meta name="description" content="Read expert tips on saree blouse customization, fabrics care, bridal embroidery styles, and measurement sizing guides from SAVIAA.">
+  <link rel="canonical" href="https://saviaa.com/blog-post.html">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  
+  <style>
+    /* Blog post reader custom styles */
+    .blog-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--spacing-md);
+      align-items: start;
+    }
+    @media (min-width: 1024px) {
+      .blog-container {
+        grid-template-columns: 240px 1fr;
+        gap: var(--spacing-lg);
+      }
+    }
+    .toc-sticky {
+      position: sticky;
+      top: calc(var(--header-height) + 2rem);
+      background-color: var(--secondary);
+      padding: var(--spacing-sm);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+    }
+    .toc-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--dark);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .toc-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+    }
+    .toc-links a {
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+    .toc-links a:hover {
+      color: var(--primary);
+    }
+    .blog-post-content {
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+    .blog-post-content h2 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.25rem;
+    }
+    .blog-post-content p {
+      margin-bottom: 1.25rem;
+    }
+    .blog-post-content ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .author-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid var(--border);
+      padding: var(--spacing-sm);
+      border-radius: var(--radius-card);
+      margin: 2rem 0;
+      background-color: var(--bg-offset);
+    }
+    .author-avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: var(--radius-pill);
+      object-fit: cover;
+    }
+    
+    /* Comment structure */
+    .comments-wrapper {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+    .comment-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .comment-item {
+      background-color: var(--secondary);
+      padding: var(--spacing-sm);
+      border-radius: var(--radius-card);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navbar Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">SAVIAA<span>.</span></a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="custom-blouses.html" class="nav-link">Custom Blouses</a></li>
+          <li><a href="ready-made.html" class="nav-link">Ready-made Shop</a></li>
+          <li><a href="measurement-guide.html" class="nav-link">Size Guide</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a href="account.html" class="nav-btn" aria-label="My Account">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+        <a href="ready-made.html" class="nav-btn" aria-label="Wishlist">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        </a>
+        <a href="cart.html" class="nav-btn" aria-label="Shopping Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        </a>
+        <button class="nav-btn menu-toggle" aria-label="Toggle Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav-panel">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About</a></li>
+      <li><a href="custom-blouses.html" class="mobile-nav-link">Custom Blouses</a></li>
+      <li><a href="ready-made.html" class="mobile-nav-link">Ready-made Shop</a></li>
+      <li><a href="measurement-guide.html" class="mobile-nav-link">Size Guide</a></li>
+      <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <article class="section-padding">
+      <div class="container blog-container">
+        
+        <!-- Sticky Sidebar Table of Contents (TOC) -->
+        <aside class="toc-sticky" aria-label="Table of Contents">
+          <div class="toc-title">On This Page</div>
+          <ul class="toc-links">
+            <li><a href="#section-introduction">1. Introduction</a></li>
+            <li><a href="#section-anatomy">2. Anatomy of Bust Sizing</a></li>
+            <li><a href="#section-fabric-influence">3. Fabric Stretch Coefficients</a></li>
+            <li><a href="#section-maggam-care">4. Maggam Bead Preservation</a></li>
+          </ul>
+          
+          <div style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+            <span class="toc-title">Share Article</span>
+            <div style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
+              <button class="btn btn-outline" style="padding: 4px 8px; font-size: 0.75rem;" onclick="navigator.clipboard.writeText(window.location.href); showToast('Link copied to clipboard!');">🔗 Link</button>
+              <a href="https://wa.me/?text=Check%20out%20this%20stretching%20guide!" class="btn btn-outline" style="padding: 4px 8px; font-size: 0.75rem;" target="_blank">WhatsApp</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Blog Post Column -->
+        <section style="max-width: 680px;">
+          <!-- Meta Header -->
+          <div style="margin-bottom: var(--spacing-sm);" class="reveal-on-scroll">
+            <span class="text-caption" id="blog-category">Tailoring Insights</span>
+            <h1 id="blog-title" style="font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.15; margin-top: 0.25rem;">How to Measure Saree Blouse Sizes Correctly at Home</h1>
+            
+            <div style="display:flex; gap: 1rem; align-items:center; font-size:0.85rem; color:var(--text-muted); margin-top: 0.75rem;">
+              <span id="blog-author">By Master Tailor Shankar</span>
+              <span>•</span>
+              <span id="blog-readtime">5 Mins Read</span>
+              <span>•</span>
+              <span>Published: July 2026</span>
+            </div>
+          </div>
+
+          <!-- Blog Image Banner -->
+          <div style="aspect-ratio: 16 / 9; border-radius: var(--radius-card); overflow:hidden; background-color: var(--secondary); margin-bottom: var(--spacing-md);" class="reveal-on-scroll">
+            <img id="blog-banner-img" src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800" alt="Measuring tape draping silk blouse fabric" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+
+          <!-- Structured Blog Copy content -->
+          <div class="blog-post-content reveal-on-scroll" id="blog-text-container">
+            <p id="section-introduction">Getting the perfect blouse fit starts with precise body measurements. Unlike regular clothing, a blouse is structured to fit snug against the torso. A deviation of even half an inch can throw off the neckline balance or make the armhole uncomfortable.</p>
+            
+            <h2 id="section-anatomy">The Anatomy of Snug Bust & Shoulder Sizing</h2>
+            <p>To measure your bust correctly at home, wrap the soft measuring tape around the fullest part of your chest, keeping it parallel to the floor. Do not pull the tape too tight; it should sit comfortably against the skin.</p>
+            <ul>
+              <li><strong>Bust Line:</strong> Measure across the highest point of the apex.</li>
+              <li><strong>Under Bust:</strong> Measure right under the breasts where the blouse band ends. This is crucial for structure.</li>
+              <li><strong>Shoulder Width:</strong> Measure from one outer tip of the shoulder bone across the back neck to the other bone tip.</li>
+            </ul>
+
+            <h2 id="section-fabric-influence">How Fabric Stretch Coefficients Impact Cut Selection</h2>
+            <p>Different fabrics behave differently under stitching tension. For instance, raw silk and velvet have zero elasticity. If you are stitching a raw silk blouse, Master Tailors suggest leaving a 1.5-inch inner margin for future adjustments. Conversely, Lycra and cotton knits stretch, requiring a closer, snug cut.</p>
+
+            <h2 id="section-maggam-care">Maggam Embroidery & Stone Work Preservation</h2>
+            <p>Maggam handwork uses delicate gold zari thread and metal beads. To clean, never machine wash. Always dry clean. When storing, wrap the blouse in clean muslin cloth to prevent oxidation of the metal wire threads.</p>
+          </div>
+
+          <!-- Author Card profile -->
+          <div class="author-card reveal-on-scroll">
+            <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=100" class="author-avatar" alt="Shankar Master Cutter Profile Picture">
+            <div>
+              <h4 style="font-size: 0.95rem; font-weight: 700;">Master Shankar</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted);">Head Master Tailor at SAVIAA Pendurthi facility. 22+ years of custom bridal saree blouse tailoring expertise across Andhra Pradesh and Telangana.</p>
+            </div>
+          </div>
+
+          <!-- Comment Box section -->
+          <div class="comments-wrapper">
+            <h3>Discussion (2 Comments)</h3>
+            
+            <!-- Comment lists -->
+            <div class="comment-list" id="blog-comments-list">
+              <div class="comment-item">
+                <div class="flex-between" style="font-weight: 700; margin-bottom: 2px;">
+                  <span>Deepika R. (Vizag)</span>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">Yesterday</span>
+                </div>
+                <p>The tip about raw silk margins is incredibly helpful. Shankar master is indeed the best in Pendurthi!</p>
+              </div>
+              <div class="comment-item">
+                <div class="flex-between" style="font-weight: 700; margin-bottom: 2px;">
+                  <span>Lalitha Chowdary</span>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">3 days ago</span>
+                </div>
+                <p>Loved the Maggam work care instructions. My wedding blouse has heavy embroidery and I will follow this.</p>
+              </div>
+            </div>
+
+            <!-- Submit comment form -->
+            <form id="blog-comment-form" style="display: flex; flex-direction: column; gap: var(--spacing-xs); margin-top: 1rem;">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                <input type="text" id="comment-author-name" class="form-input" placeholder="Your Name" required>
+                <input type="email" id="comment-author-email" class="form-input" placeholder="Email (private)" required>
+              </div>
+              <textarea id="comment-body" class="form-input" style="min-height: 80px;" placeholder="Add a comment or ask Shankar a question..." required></textarea>
+              <button class="btn btn-dark" type="submit" style="align-self: flex-start; padding: 0.5rem 1rem;">Submit Comment</button>
+            </form>
+          </div>
+
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-title">SAVIAA.</span>
+        <p class="footer-desc">Premium custom tailoring boutique. Visakhapatnam, Andhra Pradesh.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Handle comments submission logic
+    const commentForm = document.getElementById('blog-comment-form');
+    const commentsList = document.getElementById('blog-comments-list');
+
+    if (commentForm && commentsList) {
+      commentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const author = document.getElementById('comment-author-name').value;
+        const msg = document.getElementById('comment-body').value;
+
+        const div = document.createElement('div');
+        div.className = 'comment-item';
+        div.innerHTML = `
+          <div class="flex-between" style="font-weight: 700; margin-bottom: 2px;">
+            <span>${author}</span>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Just Now</span>
+          </div>
+          <p>${msg}</p>
+        `;
+        commentsList.appendChild(div);
+        
+        // Reset and notify
+        commentForm.reset();
+        showToast("Comment submitted successfully!");
+      });
+    }
+
+    // Dynamic Blog loader matching index parameter
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const index = urlParams.get('index');
+      if (index === null) return;
+
+      const blogPostsData = [
+        {
+          title: "How to measure blouse size correctly at home",
+          category: "Sizing & Fitting Guides",
+          readtime: "5 Mins Read",
+          image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&q=80&w=800",
+          author: "By Master Shankar"
+        },
+        {
+          title: "Latest blouse trends shaping South Indian fashion",
+          category: "Fashion & Trends",
+          readtime: "6 Mins Read",
+          image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800",
+          author: "By Designer Sravya"
+        },
+        {
+          title: "Stunning bridal blouse ideas for weddings",
+          category: "Bridal Collections",
+          readtime: "8 Mins Read",
+          image: "assets/images/bridal_cover.png",
+          author: "By Designer Sravya"
+        },
+        {
+          title: "Traditional blouse designs for silk sarees",
+          category: "Tradition & Styling",
+          readtime: "4 Mins Read",
+          image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800",
+          author: "By Master Shankar"
+        },
+        {
+          title: "The ultimate silk blouse guide: fabrics & care",
+          category: "Fabric Care Tips",
+          readtime: "7 Mins Read",
+          image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&q=80&w=800",
+          author: "By Master Shankar"
+        }
+      ];
+
+      const match = blogPostsData[parseInt(index)];
+      if (!match) return;
+
+      document.getElementById('blog-title').textContent = match.title;
+      document.getElementById('blog-category').textContent = match.category;
+      document.getElementById('blog-readtime').textContent = match.readtime;
+      document.getElementById('blog-author').textContent = match.author;
+      document.getElementById('blog-banner-img').src = match.image;
+    });
+  </script>
+</body>
+</html>
