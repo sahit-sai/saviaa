@@ -1,44 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* ==========================================================================
-   CSS VARIABLES & DESIGN SYSTEM (Swiss Design Principles)
+   CSS VARIABLES & DESIGN SYSTEM (Boutique Luxury Editorial System)
    ========================================================================== */
 :root {
-  /* Color System (SAVIAA Extracted Logo Palette) */
-  --primary: #5A1224;        /* Deep Burgundy / Wine */
-  --primary-hover: #450D1B;
-  --accent: #C08A8E;         /* Muted Rose */
-  --accent-hover: #AA7377;
-  --secondary: #F7F2EB;      /* Warm Ivory */
-  --dark: #262626;           /* Deep Charcoal text focus */
-  --text: #262626;           /* Deep Charcoal body text */
-  --text-muted: #76706B;     /* Warm Gray text */
-  --border: #E2DCD5;         /* Soft Neutral Gray */
-  --border-dark: #262626;
-  --success: #3CB371;
-  --bg-white: #FFFFFF;       /* Surface: Pure White */
-  --bg-offset: #FAF9F6;      /* Background: Warm White */
-  --shadow-sm: 0 2px 8px rgba(30, 30, 30, 0.04);
-  --shadow-md: 0 8px 24px rgba(30, 30, 30, 0.06);
-  --shadow-lg: 0 16px 40px rgba(30, 30, 30, 0.08);
+  /* Color System (SAVIAA Haute Couture Palette) */
+  --primary: #4A0E17;          /* Royal Deep Burgundy / Wine */
+  --primary-hover: #380911;
+  --primary-light: #6B1726;
+  --accent: #C59B27;           /* Warm Champagne Gold */
+  --accent-hover: #B0881E;
+  --accent-soft: #F9F5EA;       /* Gold Soft Tint */
+  --rose-accent: #C08A8E;      /* Muted Vintage Rose */
+  --secondary: #F7F3EC;        /* Warm Ivory / Silk Cream */
+  --dark: #1A1817;             /* Deep Velvet Charcoal */
+  --text: #1A1817;             /* High-Contrast Charcoal Body */
+  --text-muted: #66605C;       /* Warm Editorial Gray Body */
+  --border: #E8E2D8;           /* Delicate Silk Border */
+  --border-gold: rgba(197, 155, 39, 0.35);
+  --border-dark: #1A1817;
+  --success: #2E8B57;
+  --bg-white: #FFFFFF;         /* Surface: Pure White */
+  --bg-offset: #FAFAF8;        /* Background: Silk Soft Cream */
+  
+  /* Elevation & Shadows */
+  --shadow-sm: 0 4px 16px rgba(26, 24, 23, 0.04);
+  --shadow-md: 0 10px 30px rgba(74, 14, 23, 0.06);
+  --shadow-lg: 0 20px 48px rgba(74, 14, 23, 0.1);
+  --shadow-luxury: 0 16px 40px rgba(0, 0, 0, 0.12);
 
-  /* Fonts */
-  --font-headings: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Typography System */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-headings: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Typography Scale (Sprint 7 Bespoke Redesign) */
-  --fs-h1: clamp(4.5rem, 8vw, 6rem);         /* Oversized Display: 72px - 96px */
-  --fs-h2: clamp(3rem, 6vw, 4rem);           /* Section Heading: 48px - 64px */
-  --fs-h3: clamp(1.75rem, 3.5vw, 2.25rem);   /* Sub Heading: 28px - 36px */
-  --fs-body: clamp(1rem, 1.2vw, 1.125rem);   /* Body: 16px - 18px */
-  --fs-body-sm: 0.95rem;                      /* Button / Navigation: 15px - 16px */
-  --fs-caption: 0.85rem;                     /* Caption: 13px - 14px */
+  /* Typography Scale */
+  --fs-hero: clamp(3.2rem, 6vw, 5.2rem);      /* Editorial Display: 51px - 83px */
+  --fs-h1: clamp(2.4rem, 4.5vw, 3.6rem);        /* Section Title: 38px - 58px */
+  --fs-h2: clamp(1.8rem, 3.2vw, 2.6rem);        /* Component Heading: 28px - 41px */
+  --fs-h3: clamp(1.25rem, 2vw, 1.6rem);         /* Sub-Heading: 20px - 25px */
+  --fs-body: clamp(0.95rem, 1.1vw, 1.05rem);    /* Body: 15px - 17px */
+  --fs-body-sm: 0.875rem;                       /* Navigation & Small Controls: 14px */
+  --fs-caption: 0.75rem;                        /* Eyebrow Label: 12px */
 
   /* Borders & Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
   --radius-card: 16px;
   --radius-pill: 9999px;
   
-  /* 8-Point Spacing Scale tokens (Sprint 7) */
+  /* Spacing Scale Tokens */
   --space-4: 4px;
   --space-8: 8px;
   --space-12: 12px;
@@ -63,10 +74,10 @@
   --max-width: 1440px;
   --header-height: 85px;
 
-  /* Transitions */
+  /* Easing Curves & Motion */
   --transition-fast: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================================

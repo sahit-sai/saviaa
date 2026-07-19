@@ -1,6 +1,23 @@
 // ==========================================================================
-// SAVIAA GLOBAL COMMON JAVASCRIPT (Sprint 2 Upgraded)
+// SAVIAA GLOBAL COMMON JAVASCRIPT (Haute Couture Luxury Redesign)
 // ==========================================================================
+
+// Single Source of Truth Brand & NAP Config
+const SAVIAA_CONFIG = {
+  brandName: 'SAVIAA',
+  fullName: 'SAVIAA Custom Blouses & Ready-Made Boutique',
+  tagline: "Visakhapatnam's Premium Custom Blouse Tailoring Platform",
+  phoneRaw: '+917842410691',
+  phoneFormatted: '+91 78424 10691',
+  phoneUrl: 'tel:+917842410691',
+  whatsappUrl: 'https://wa.me/917842410691?text=Hello%20SAVIAA%2C%20I%20would%20like%20to%20stitch%20a%20custom%20blouse.',
+  address: 'Opp. State Bank, Pendurthi Bypass Junction, Visakhapatnam, Andhra Pradesh, 531173',
+  shortLocation: 'Pendurthi & Visakhapatnam, AP',
+  hours: 'Mon - Sat: 10:00 AM - 8:00 PM',
+  instagramUrl: 'https://www.instagram.com/savia_tailors/',
+  youtubeUrl: 'https://www.youtube.com/@SaviaTailors',
+  googleBusinessUrl: 'https://share.google/pIaY2cr7EJiByKHd6'
+};
 
 // Mock Search Database
 const SEARCH_DATABASE = {
@@ -27,6 +44,7 @@ const SEARCH_DATABASE = {
 
 document.addEventListener('DOMContentLoaded', () => {
   injectNavLayouts();
+  injectFooter();
   initStickyHeader();
   initMobileMenu();
   initMagneticButtons();
@@ -43,14 +61,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Sprint 2 Navigation HTML injection
 function injectNavLayouts() {
+  // 0. Ensure logo element displays official SAVIAA logo image
+  const logoEl = document.querySelector('.header .logo');
+  if (logoEl && !logoEl.querySelector('img')) {
+    logoEl.innerHTML = `<img src="assets/images/logo/saviaa-logo.png" alt="SAVIAA Haute Couture Logo" style="height: 32px; width: auto; display: block; object-fit: contain;">`;
+  }
+
   // 1. Upgrade Navigation menu to Mega Menu
   const navContainer = document.querySelector('.header nav');
   if (navContainer) {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    
     navContainer.innerHTML = `
       <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html" class="nav-link ${currentPath === 'index.html' || currentPath === '' ? 'active' : ''}">Home</a></li>
         <li style="position: static;">
-          <a href="ready-made.html" class="nav-link">Shop & Collections ▾</a>
+          <a href="ready-made.html" class="nav-link ${currentPath === 'ready-made.html' || currentPath === 'custom-blouses.html' ? 'active' : ''}">Shop & Collections ▾</a>
           <div class="mega-menu">
             <div class="mega-menu-grid">
               <div class="mega-menu-col">
@@ -82,18 +108,18 @@ function injectNavLayouts() {
               <div class="mega-menu-col">
                 <span class="mega-menu-title">Support & FAQ</span>
                 <ul class="mega-menu-links">
-                  <li><a href="contact.html">Store Directions (NAP)</a></li>
-                  <li><a href="dashboard.html?tab=tickets">Support Ticket Desk</a></li>
+                  <li><a href="contact.html">Store Directions & Map</a></li>
+                  <li><a href="dashboard.html">Client Account Desk</a></li>
                   <li><a href="blog.html">Tailoring Style Blog</a></li>
                 </ul>
               </div>
             </div>
           </div>
         </li>
-        <li><a href="customization-studio.html" class="nav-link">Custom Studio</a></li>
-        <li><a href="book-stitching.html" class="nav-link">Book Tailor</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="customization-studio.html" class="nav-link ${currentPath === 'customization-studio.html' ? 'active' : ''}">Custom Studio</a></li>
+        <li><a href="book-stitching.html" class="nav-link ${currentPath === 'book-stitching.html' ? 'active' : ''}">Book Tailor</a></li>
+        <li><a href="blog.html" class="nav-link ${currentPath === 'blog.html' || currentPath === 'blog-post.html' ? 'active' : ''}">Blog</a></li>
+        <li><a href="contact.html" class="nav-link ${currentPath === 'contact.html' ? 'active' : ''}">Contact</a></li>
       </ul>
     `;
   }
@@ -687,3 +713,65 @@ function initMobileBottomNavActiveState() {
     }
   });
 }
+
+// 9. Global Editorial Footer HTML Injection
+function injectFooter() {
+  const footerContainer = document.querySelector('footer.footer');
+  if (footerContainer) {
+    footerContainer.innerHTML = `
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link" aria-label="SAVIAA Home">
+            <img src="assets/images/logo/saviaa-logo.png" alt="SAVIAA Haute Couture Logo" style="height: 34px; width: auto; display: block; filter: brightness(0) invert(1);">
+          </a>
+          <p class="footer-desc">Visakhapatnam's premier custom blouse tailoring boutique & 3D style studio. Handcrafted tailoring with doorstep measurement visits across Visakhapatnam & Pendurthi.</p>
+          <div class="footer-contact-info" style="margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.75); display: flex; flex-direction: column; gap: 0.4rem;">
+            <p>📍 <strong>Boutique Address:</strong> ${SAVIAA_CONFIG.address}</p>
+            <p>📞 <strong>Phone / WhatsApp:</strong> <a href="${SAVIAA_CONFIG.phoneUrl}" style="color: var(--accent); text-decoration: underline;">${SAVIAA_CONFIG.phoneFormatted}</a></p>
+            <p>🕒 <strong>Boutique Hours:</strong> ${SAVIAA_CONFIG.hours}</p>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <span class="footer-links-title">Services & Studio</span>
+          <ul class="footer-links">
+            <li><a href="customization-studio.html">3D Blouse Customizer 2.0</a></li>
+            <li><a href="book-stitching.html">Book Doorstep Tailor</a></li>
+            <li><a href="custom-blouses.html">Stitching Templates & Gallery</a></li>
+            <li><a href="ready-made.html">Ready-made Collections</a></li>
+            <li><a href="measurement-guide.html">Size Calculator & Fabric Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <span class="footer-links-title">Regional Hubs</span>
+          <ul class="footer-links">
+            <li><a href="boutique-pendurthi.html">Pendurthi Boutique Hub</a></li>
+            <li><a href="boutique-visakhapatnam.html">Visakhapatnam Design Studio</a></li>
+            <li><a href="gallery.html">Customer Work Portfolio</a></li>
+            <li><a href="blog.html">Haute Couture Style Blog</a></li>
+            <li><a href="contact.html">Store Location & Directions</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <span class="footer-links-title">Customer Care</span>
+          <ul class="footer-links">
+            <li><a href="order-tracking.html">Live Order Tracking</a></li>
+            <li><a href="account.html">My Account Portal</a></li>
+            <li><a href="dashboard.html">Client Dashboard</a></li>
+            <li><a href="admin.html">CRM Portal</a></li>
+            <li><a href="contact.html">Support & Inquiries</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>&copy; ${new Date().getFullYear()} SAVIAA Custom Blouse Tailoring Boutique. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="${SAVIAA_CONFIG.instagramUrl}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+          <a href="${SAVIAA_CONFIG.whatsappUrl}" class="footer-social-link" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>
+          <a href="${SAVIAA_CONFIG.youtubeUrl}" class="footer-social-link" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a>
+          <a href="${SAVIAA_CONFIG.googleBusinessUrl}" class="footer-social-link" target="_blank" rel="noopener" aria-label="Google Business Profile">Google Business</a>
+        </div>
+      </div>
+    `;
+  }
+}
+

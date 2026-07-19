@@ -586,10 +586,14 @@ dialog[open]::backdrop {
 /* ==========================================================================
    FOOTER
    ========================================================================== */
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 .footer {
-  background-color: var(--secondary);
-  border-top: 1px solid var(--border);
-  padding-top: var(--spacing-lg);
+  background-color: var(--dark);
+  color: var(--bg-white);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: var(--spacing-xl);
   padding-bottom: var(--spacing-md);
   margin-top: auto;
 }
@@ -597,13 +601,13 @@ dialog[open]::backdrop {
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
 }
 
 @media (min-width: 768px) {
   .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    grid-template-columns: 2fr 1.2fr 1.2fr 1.2fr;
   }
 }
 
@@ -615,14 +619,17 @@ dialog[open]::backdrop {
 
 .footer-title {
   font-family: var(--font-headings);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--dark);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.02em;
 }
 
 .footer-desc {
   font-size: var(--fs-body-sm);
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  max-width: 420px;
 }
 
 .footer-links-col {
@@ -632,27 +639,30 @@ dialog[open]::backdrop {
 }
 
 .footer-links-title {
-  font-size: var(--fs-body-sm);
-  font-weight: 700;
-  color: var(--dark);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-family: var(--font-headings);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  margin-bottom: 0.25rem;
 }
 
 .footer-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+  gap: 0.6rem;
   font-size: var(--fs-body-sm);
 }
 
 .footer-links a {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.75);
+  transition: color var(--transition-fast);
 }
 
 .footer-links a:hover {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 .footer-newsletter {
@@ -667,23 +677,24 @@ dialog[open]::backdrop {
 }
 
 .footer-newsletter-input {
-  background-color: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
   padding: 0.75rem 1rem;
   font-size: var(--fs-body-sm);
+  color: var(--bg-white);
   width: 100%;
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: var(--spacing-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: var(--spacing-md);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
   align-items: center;
   font-size: var(--fs-caption);
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
 }
 
@@ -697,16 +708,17 @@ dialog[open]::backdrop {
 
 .footer-socials {
   display: flex;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-md);
 }
 
 .footer-social-link {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   transition: color var(--transition-fast);
+  font-weight: 500;
 }
 
 .footer-social-link:hover {
-  color: var(--primary);
+  color: var(--accent);
 }
 
 /* ==========================================================================
