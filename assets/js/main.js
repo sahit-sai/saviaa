@@ -1,5 +1,5 @@
 // ==========================================================================
-// SAVIAA EDITORIAL FASHION JAVASCRIPT (Single Source of Truth Configuration)
+// SAVIAA "THE ATELIER INDEX" JAVASCRIPT
 // ==========================================================================
 
 const SAVIAA_CONFIG = {
@@ -96,10 +96,10 @@ function injectFooter() {
         <div class="footer-brand">
           <span class="footer-title">${SAVIAA_CONFIG.brandName}</span>
           <p class="footer-desc">${SAVIAA_CONFIG.fullName}. Handcrafted saree blouse tailoring with doorstep measurement visits across Visakhapatnam & Pendurthi.</p>
-          <div class="footer-contact-info" style="margin-top: 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.75); display: flex; flex-direction: column; gap: 0.4rem;">
+          <div class="footer-contact-info" style="margin-top: 1rem; font-size: 0.85rem; color: rgba(244,238,228,0.8); display: flex; flex-direction: column; gap: 0.4rem;">
             <p><strong>Address:</strong> ${SAVIAA_CONFIG.address}</p>
-            <p><strong>Primary / WhatsApp:</strong> <a href="tel:+917842410691" style="color: var(--accent); text-decoration: underline;">${SAVIAA_CONFIG.phoneFormattedPrimary}</a></p>
-            <p><strong>Secondary Phone:</strong> <a href="tel:+919182743352" style="color: var(--accent); text-decoration: underline;">${SAVIAA_CONFIG.phoneFormattedSecondary}</a></p>
+            <p><strong>Primary / WhatsApp:</strong> <a href="tel:+917842410691" style="color: var(--brass); text-decoration: underline;">${SAVIAA_CONFIG.phoneFormattedPrimary}</a></p>
+            <p><strong>Secondary Phone:</strong> <a href="tel:+919182743352" style="color: var(--brass); text-decoration: underline;">${SAVIAA_CONFIG.phoneFormattedSecondary}</a></p>
             <p><strong>Boutique Hours:</strong> ${SAVIAA_CONFIG.hours}</p>
           </div>
         </div>
