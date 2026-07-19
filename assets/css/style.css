@@ -1,51 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 /* ==========================================================================
-   CSS VARIABLES & DESIGN SYSTEM (Boutique Luxury Editorial System)
+   CSS VARIABLES & DESIGN SYSTEM (Premium Accessible Boutique System)
    ========================================================================== */
 :root {
-  /* Color System (SAVIAA Haute Couture Palette) */
-  --primary: #4A0E17;          /* Royal Deep Burgundy / Wine */
-  --primary-hover: #380911;
-  --primary-light: #6B1726;
-  --accent: #C59B27;           /* Warm Champagne Gold */
-  --accent-hover: #B0881E;
-  --accent-soft: #F9F5EA;       /* Gold Soft Tint */
-  --rose-accent: #C08A8E;      /* Muted Vintage Rose */
-  --secondary: #F7F3EC;        /* Warm Ivory / Silk Cream */
-  --dark: #1A1817;             /* Deep Velvet Charcoal */
-  --text: #1A1817;             /* High-Contrast Charcoal Body */
-  --text-muted: #66605C;       /* Warm Editorial Gray Body */
-  --border: #E8E2D8;           /* Delicate Silk Border */
-  --border-gold: rgba(197, 155, 39, 0.35);
-  --border-dark: #1A1817;
-  --success: #2E8B57;
+  /* Brand Core Colors (Premium & Approachable) */
+  --primary: #6B1C2A;          /* Warm Mulberry Wine / Burgundy */
+  --primary-hover: #541420;
+  --primary-light: #8B263B;
+  --accent: #D99627;           /* Warm Amber Gold (Trustworthy & Vibrant) */
+  --accent-hover: #C2831F;
+  --accent-soft: #FAF4E8;       /* Warm Amber Soft Tint */
+  --rose-accent: #D9828B;      /* Warm Rose Tint */
+  --secondary: #F7F3EC;        /* Warm Ivory / Sand Surface */
+  --dark: #2B2825;             /* Warm Soft Charcoal Body Focus */
+  --text: #2B2825;             /* Readable Charcoal Body Text */
+  --text-muted: #6E6862;       /* Warm Neutral Gray Body Text */
+  --border: #E8E3DA;           /* Soft Natural Border */
+  --border-accent: rgba(217, 150, 39, 0.35);
+  --border-dark: #2B2825;
+  --success: #2D8A56;
   --bg-white: #FFFFFF;         /* Surface: Pure White */
-  --bg-offset: #FAFAF8;        /* Background: Silk Soft Cream */
+  --bg-offset: #FAF8F5;        /* Background: Silk Soft Cream */
   
-  /* Elevation & Shadows */
-  --shadow-sm: 0 4px 16px rgba(26, 24, 23, 0.04);
-  --shadow-md: 0 10px 30px rgba(74, 14, 23, 0.06);
-  --shadow-lg: 0 20px 48px rgba(74, 14, 23, 0.1);
-  --shadow-luxury: 0 16px 40px rgba(0, 0, 0, 0.12);
+  /* Soft Depth & Shadows */
+  --shadow-sm: 0 2px 10px rgba(43, 40, 37, 0.04);
+  --shadow-md: 0 8px 24px rgba(43, 40, 37, 0.07);
+  --shadow-lg: 0 16px 36px rgba(107, 28, 42, 0.1);
 
-  /* Typography System */
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-headings: 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Typography System (Plus Jakarta Sans + Inter) */
+  --font-headings: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Typography Scale */
-  --fs-hero: clamp(3.2rem, 6vw, 5.2rem);      /* Editorial Display: 51px - 83px */
-  --fs-h1: clamp(2.4rem, 4.5vw, 3.6rem);        /* Section Title: 38px - 58px */
-  --fs-h2: clamp(1.8rem, 3.2vw, 2.6rem);        /* Component Heading: 28px - 41px */
-  --fs-h3: clamp(1.25rem, 2vw, 1.6rem);         /* Sub-Heading: 20px - 25px */
-  --fs-body: clamp(0.95rem, 1.1vw, 1.05rem);    /* Body: 15px - 17px */
-  --fs-body-sm: 0.875rem;                       /* Navigation & Small Controls: 14px */
-  --fs-caption: 0.75rem;                        /* Eyebrow Label: 12px */
+  --fs-hero: clamp(2.6rem, 5vw, 4.2rem);       /* Confident Premium Hero Title */
+  --fs-h1: clamp(2.1rem, 3.8vw, 3.2rem);       /* Page Title */
+  --fs-h2: clamp(1.6rem, 2.8vw, 2.2rem);       /* Section Title */
+  --fs-h3: clamp(1.2rem, 1.8vw, 1.5rem);       /* Card / Sub-Heading Title */
+  --fs-body: clamp(0.95rem, 1vw, 1.05rem);     /* Highly Readable Body */
+  --fs-body-sm: 0.875rem;                       /* Buttons & Small Controls */
+  --fs-caption: 0.75rem;                        /* Eyebrow Label */
 
   /* Borders & Radius */
-  --radius-sm: 6px;
-  --radius-md: 12px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
   --radius-card: 16px;
   --radius-pill: 9999px;
   
@@ -75,9 +73,9 @@
   --header-height: 85px;
 
   /* Easing Curves & Motion */
-  --transition-fast: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-normal: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-normal: 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-slow: 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* ==========================================================================
