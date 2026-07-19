@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SAVIAA "THE ATELIER INDEX" COMPONENTS SYSTEM
+   SAVIAA "THE ATELIER INDEX" ADVANCED STYLES & ANIMATIONS
    ========================================================================== */
 
 /* 12-Column Swiss Modular Grid Layout */
@@ -52,6 +52,63 @@
 .hairline-bottom { border-bottom: 1px solid var(--line); }
 .hairline-right { border-right: 1px solid var(--line); }
 .hairline-left { border-left: 1px solid var(--line); }
+
+/* ==========================================================================
+   02. SEAM MARQUEE (Cocoa Full-Width Band)
+   ========================================================================== */
+.seam-marquee {
+  background-color: var(--cocoa);
+  color: var(--paper);
+  border-top: 1px solid var(--brass);
+  border-bottom: 1px solid var(--brass);
+  padding: 0.9rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee-scroll 35s linear infinite;
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   04. SIGNATURE STATEMENT (Velora Outlined Background Type Device)
+   ========================================================================== */
+.signature-statement-section {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--paper);
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+}
+
+.giant-outlined-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-telugu);
+  font-size: clamp(8rem, 24vw, 24rem);
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(169, 139, 93, 0.25);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 1;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
 
 /* ==========================================================================
    BUTTONS (Atelier Refined Radius, Madder Primary)
