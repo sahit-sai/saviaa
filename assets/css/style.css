@@ -1,76 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap');
 
 /* ==========================================================================
-   CSS VARIABLES & DESIGN SYSTEM (Swiss International Typographic System)
+   SAVIAA EDITORIAL FASHION SYSTEM (Cormorant Garamond + Jost)
+   Inspired by Raw Mango, Nicobar, Jaypore, Toteme & Aesop
    ========================================================================== */
 :root {
-  /* Direction 1 Palette: Paper, Deep Ink & Saffron Accent */
-  --primary: #141724;          /* Deep Ink Indigo */
-  --primary-hover: #080A10;
-  --accent: #D94A26;           /* Saffron Red-Orange (5% Sharp Accent) */
-  --accent-hover: #BF3C1C;
-  --accent-soft: #FAF0ED;
+  /* Palette: Warm Ecru Base, Deep Ink Charcoal & Muted Clay Terracotta Accent */
+  --primary: #1C1817;          /* Deep Ink Charcoal */
+  --primary-hover: #0F0D0C;
+  --accent: #8B4A3E;           /* Muted Clay Terracotta (Fashion Accent) */
+  --accent-hover: #723B31;
+  --accent-soft: #F4ECE9;
   
-  --secondary: #F4EFE6;        /* Warm Paper Tonal Block */
-  --dark: #141724;             /* High-Contrast Ink Body Text */
-  --text: #141724;
-  --text-muted: #5C6070;       /* Muted Slate Body Gray */
-  --border: #E5E0D8;           /* 1px Hairline Rule */
-  --border-dark: #141724;
-  --success: #2D8A56;
+  --secondary: #F0ECE4;        /* Soft Sand Tonal Block */
+  --dark: #1C1817;
+  --text: #1C1817;
+  --text-muted: #625C58;       /* Warm Earth Muted Gray */
+  --border: #E6E0D6;           /* Gentle Hairline Rule */
+  --border-dark: #1C1817;
   
-  --bg-white: #FAF8F4;         /* Base: Warm Paper Cream */
-  --bg-surface: #FFFFFF;       /* Pure White Frame Surface */
-  --bg-offset: #F4EFE6;        /* Sand Tonal Surface */
+  --bg-white: #FAF7F2;         /* Base: Warm Paper Ecru */
+  --bg-surface: #FFFFFF;       /* Crisp Surface */
+  --bg-offset: #F4EFE6;        /* Tonal Oatmeal Surface */
   
-  /* FLAT - Zero Drop Shadows. Separation via 1px Hairline Rules */
-  --shadow-sm: none;
-  --shadow-md: none;
+  /* Refined Subtle Shadows */
+  --shadow-sm: 0 2px 8px rgba(28, 24, 23, 0.03);
+  --shadow-md: 0 8px 24px rgba(28, 24, 23, 0.05);
 
-  /* Typography System (Space Grotesk + Instrument Serif Accent) */
-  --font-headings: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
-  --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Editorial Typography System (Cormorant Garamond + Jost) */
+  --font-headings: 'Cormorant Garamond', Georgia, "Times New Roman", serif;
+  --font-serif: 'Cormorant Garamond', Georgia, "Times New Roman", serif;
+  --font-body: 'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-  /* Extreme Scale Typography Contrast */
-  --fs-display: clamp(4.5rem, 11vw, 10.5rem);  /* Oversized Display Headline */
-  --fs-hero: clamp(2.8rem, 5.5vw, 4.8rem);
+  /* Scale Typography Contrast */
+  --fs-hero-title: clamp(2.4rem, 4.8vw, 4.2rem);
   --fs-h1: clamp(2.2rem, 3.8vw, 3.4rem);
-  --fs-h2: clamp(1.5rem, 2.5vw, 2.2rem);
-  --fs-h3: clamp(1.15rem, 1.6vw, 1.45rem);
+  --fs-h2: clamp(1.6rem, 2.5vw, 2.4rem);
+  --fs-h3: clamp(1.2rem, 1.6vw, 1.5rem);
   --fs-body: clamp(0.95rem, 1.05vw, 1.05rem);
-  --fs-body-sm: 0.85rem;
-  --fs-caption: 0.725rem;
+  --fs-body-sm: 0.875rem;
+  --fs-caption: 0.75rem;
 
-  /* Flat Swiss Radius (0px - 2px max) */
-  --radius-sm: 0px;
-  --radius-md: 2px;
-  --radius-card: 2px;
-  --radius-pill: 2px;
+  /* Refined Rounding Curves (6px - 14px) */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-card: 12px;
+  --radius-pill: 9999px;
   
   /* Spacing Scale */
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-48: 48px;
-  --space-64: 64px;
-  --space-96: 96px;
-
-  --spacing-xs: var(--space-8);
-  --spacing-sm: var(--space-16);
-  --spacing-md: var(--space-32);
-  --spacing-lg: var(--space-64);
-  --spacing-xl: var(--space-96);
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 32px;
+  --spacing-lg: 64px;
+  --spacing-xl: 96px;
 
   --max-width: 1440px;
-  --header-height: 75px;
+  --header-height: 80px;
 
-  /* Sharp Precise Easing */
-  --transition-fast: 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
-  --transition-normal: 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  /* Refined Motion Easing */
+  --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-normal: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Base Reset */
@@ -97,7 +87,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  line-height: 1.6;
+  line-height: 1.65;
+  letter-spacing: 0.01em;
 }
 
 img {
@@ -124,14 +115,13 @@ button {
   cursor: pointer;
 }
 
-/* Grotesk Headlines & Instrument Serif Accent */
+/* High-Contrast Editorial Serif Headlines */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-headings);
-  font-weight: 700;
-  line-height: 1.05;
+  font-weight: 500;
+  line-height: 1.15;
   color: var(--dark);
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
 }
 
 h1 { font-size: var(--fs-h1); }
@@ -143,54 +133,45 @@ p {
   color: var(--text-muted);
   font-weight: 400;
   max-width: 65ch;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 em, .serif-accent {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  text-transform: none;
   color: var(--accent);
-  letter-spacing: 0;
 }
 
+/* Quiet Wide-Tracked Whispering Kicker */
 .kicker {
   font-family: var(--font-body);
   font-size: var(--fs-caption);
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-weight: 500;
   color: var(--accent);
 }
 
-/* Hard-Ruled Tonal Placeholder Image Slots */
-.image-placeholder {
-  background-color: var(--bg-offset);
-  border: 1px solid var(--border-dark);
-  border-radius: var(--radius-sm);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-md);
-  text-align: center;
+/* Refined Frame for Real Photography */
+.fashion-image-frame {
   position: relative;
   overflow: hidden;
-  color: var(--text-muted);
-  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border);
+  background-color: var(--bg-offset);
+  box-shadow: var(--shadow-sm);
 }
 
-.image-placeholder-label {
-  font-family: var(--font-body);
-  font-size: 0.725rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--dark);
-  border: 1px solid var(--border-dark);
-  padding: 0.4rem 0.8rem;
-  background: var(--bg-surface);
+.fashion-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.fashion-image-frame:hover img {
+  transform: scale(1.025);
 }
 
 .container {
@@ -218,5 +199,26 @@ em, .serif-accent {
   .section-padding {
     padding-top: var(--spacing-xl);
     padding-bottom: var(--spacing-xl);
+  }
+}
+
+/* Scroll Animation Utilities */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

@@ -1,5 +1,5 @@
 // ==========================================================================
-// SAVIAA SWISS GRID COMMON JAVASCRIPT (Single Source of Truth Config)
+// SAVIAA EDITORIAL FASHION JAVASCRIPT (Single Source of Truth Configuration)
 // ==========================================================================
 
 const SAVIAA_CONFIG = {
@@ -24,34 +24,30 @@ const SAVIAA_CONFIG = {
 document.addEventListener('DOMContentLoaded', () => {
   injectNavLayouts();
   injectFooter();
-  injectGridOverlay();
-  initGridToggleBtn();
+  initScrollAnimations();
 });
 
-// Grid Overlay HTML Injector
-function injectGridOverlay() {
-  if (document.getElementById('grid-overlay')) return;
+// Scroll Reveal Observer for Subtle Fade & Slide Animations
+function initScrollAnimations() {
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  if (!animatedElements.length) return;
 
-  const overlay = document.createElement('div');
-  overlay.id = 'grid-overlay';
-  for (let i = 0; i < 12; i++) {
-    overlay.appendChild(document.createElement('div'));
-  }
-  document.body.appendChild(overlay);
-}
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -60px 0px',
+    threshold: 0.1
+  };
 
-// Toggle Grid Button
-function initGridToggleBtn() {
-  const btn = document.getElementById('toggle-grid-btn');
-  if (btn) {
-    btn.addEventListener('click', () => {
-      const overlay = document.getElementById('grid-overlay');
-      if (overlay) {
-        overlay.classList.toggle('visible');
-        btn.innerText = overlay.classList.contains('visible') ? 'HIDE 12-COL GRID' : 'SHOW 12-COL GRID';
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        observer.unobserve(entry.target);
       }
     });
-  }
+  }, observerOptions);
+
+  animatedElements.forEach((el) => observer.observe(el));
 }
 
 // Navigation Layout HTML Injection
