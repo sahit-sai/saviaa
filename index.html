@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/components.css">
 
-  <!-- AEO & GEO Structured Data: LocalBusiness & FAQPage -->
   <script type="application/ld+json">
   [
     {
@@ -63,14 +62,6 @@
             "@type": "Answer",
             "text": "Our master tailors visit your home in Visakhapatnam or Pendurthi to take exact body measurements, collect saree fabrics, discuss necklines and embroidery work, and deliver the finished, fitted blouse directly to your doorstep."
           }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does custom blouse stitching take at SAVIAA?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Standard custom blouse stitching takes 7 to 9 days in Visakhapatnam. We also offer 48-hour express tailoring for urgent wedding or festival requirements."
-          }
         }
       ]
     }
@@ -84,99 +75,123 @@
     <div class="container nav">
       <a href="index.html" class="logo"><span class="logo-text">SAVIAA</span></a>
       <nav aria-label="Main Navigation">
-        <!-- Upgraded dynamically by main.js -->
+        <!-- Injected by main.js -->
       </nav>
       <div class="nav-actions">
-        <a href="book-stitching.html" class="nav-btn">Book Tailor</a>
-        <a href="contact.html" class="nav-btn">Contact Us</a>
+        <button id="toggle-grid-btn" class="nav-btn" aria-label="Toggle 12-Column Grid Overlay">Show 12-Col Grid</button>
+        <a href="book-stitching.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Book Tailor</a>
       </div>
     </div>
   </header>
 
   <main>
-    <!-- 01. Strong Typographic Hero Section -->
-    <section class="section-padding" style="background-color: var(--bg-white); border-bottom: 1px solid var(--border);">
-      <div class="container" style="display: grid; grid-template-columns: 1fr; gap: var(--spacing-lg); align-items: center;">
-        <div style="max-width: 780px;">
-          <span class="text-caption" style="margin-bottom: 0.5rem; display: block;">Women's Saree Blouse Boutique & Custom Tailoring</span>
-          <h1 style="font-size: var(--fs-hero); line-height: 1.08; color: var(--dark); margin-bottom: 1.25rem;">
-            Every Saree Deserves a Blouse Handcrafted for Your Fit.
-          </h1>
-          <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 60ch; margin-bottom: 2rem;">
-            SAVIAA is Visakhapatnam’s dedicated boutique for saree blouses. Explore ready-stitched sizes, our signature Savia-designed pattern collection, or book a doorstep measurement tailor to your home in Vizag or Pendurthi.
-          </p>
-          <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
-            <a href="book-stitching.html" class="btn btn-primary">Book Doorstep Measurement</a>
-            <a href="ready-made.html" class="btn btn-outline">Explore Collections</a>
+    <!-- HERO DIRECTION 1: THE ASYMMETRIC MONUMENT (ON 12-COLUMN GRID) -->
+    <section class="section-padding hairline-bottom" style="background-color: var(--bg-white);">
+      <div class="container grid-12" style="align-items: stretch;">
+        
+        <!-- COL 1-7: Oversized Display Headline & Statement -->
+        <div class="col-span-7 hairline-right" style="padding-right: var(--spacing-md); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <span class="kicker" style="margin-bottom: 1rem; display: block;">01 / SWISS GRID BOUTIQUE SYSTEM</span>
+            
+            <h1 style="font-size: var(--fs-display); line-height: 0.95; letter-spacing: -0.04em; color: var(--primary); margin-bottom: 1.5rem; word-break: break-word;">
+              SAVI<br>AA
+            </h1>
+
+            <p style="font-size: clamp(1.2rem, 2vw, 1.6rem); font-family: var(--font-headings); font-weight: 700; color: var(--dark); text-transform: uppercase; line-height: 1.25; max-width: 25ch; margin-bottom: 2rem;">
+              Every Saree Deserves a Blouse <em class="serif-accent">handcrafted</em> for Your Body.
+            </p>
+          </div>
+
+          <div style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); padding-top: 1rem; border-top: 1px solid var(--border);">
+            VISAKHAPATNAM & PENDURTHI • EST. 2026 • 17.8094° N, 83.1972° E
+          </div>
+        </div>
+
+        <!-- COL 8-9: Index Metadata & Primary CTA -->
+        <div class="col-span-2 hairline-right" style="padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <span class="kicker">INDEX / 01</span>
+            <div style="font-size: 0.9rem; font-weight: 700; text-transform: uppercase; line-height: 1.4; color: var(--dark);">
+              Saree Blouse Boutique & Custom Tailoring Atelier
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); max-width: none;">
+              Ready-stitched sizes, signature Savia-designed patterns, and doorstep measurement visits across Visakhapatnam municipal areas.
+            </p>
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem;">
+            <a href="book-stitching.html" class="btn btn-accent" style="width: 100%;">Book Doorstep Fit</a>
+            <a href="ready-made.html" class="btn btn-outline" style="width: 100%;">Ready Shop</a>
+          </div>
+        </div>
+
+        <!-- COL 10-12: Hard-Ruled Framed Product Image Slot -->
+        <div class="col-span-3" style="padding-left: var(--spacing-sm);">
+          <div class="image-placeholder" style="height: 100%; min-height: 440px;">
+            <span class="image-placeholder-label">PRODUCT IMAGE SLOT</span>
+            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dark); font-weight: 700; margin-top: 1rem;">SIGNATURE COLLECTION 01</span>
+            <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Kanchipuram Silk & Zardozi</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 02. THREE OFFERINGS GRID (LOWER HERO BAYS) -->
+    <section class="section-padding hairline-bottom" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div style="margin-bottom: var(--spacing-md); display: flex; justify-content: space-between; align-items: flex-end;" class="hairline-bottom" style="padding-bottom: 1rem;">
+          <div>
+            <span class="kicker">02 / THREE COLLECTIONS</span>
+            <h2 style="margin-top: 0.25rem;">Tailoring Services & Catalog</h2>
+          </div>
+          <span style="font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">SWISS GRID v2.4</span>
+        </div>
+
+        <div class="grid-12">
+          <!-- Item 1 -->
+          <div class="col-span-4 card">
+            <span class="kicker">01. READY-STITCHED</span>
+            <h3 class="card-title">Instant Fitting Blouses</h3>
+            <p class="card-desc">Sizes 32 to 44 with 2-inch inner adjustment seam allowances. Stitched in raw silk, Banarasi brocade, and handloom cotton.</p>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+              <span style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">₹1,450 ONWARDS</span>
+              <a href="ready-made.html" class="btn-text">View Catalog →</a>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="col-span-4 card">
+            <span class="kicker">02. SIGNATURE SAVIA</span>
+            <h3 class="card-title">In-House Pattern Collection</h3>
+            <p class="card-desc">Exclusive necklines, elbow-length Maggam embroidery sleeves, and deep keyhole backs designed in Visakhapatnam.</p>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+              <span style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">SIGNATURE 2026</span>
+              <a href="custom-blouses.html" class="btn-text">View Patterns →</a>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="col-span-4 card">
+            <span class="kicker">03. BESPOKE STITCH</span>
+            <h3 class="card-title">Doorstep Home Measurements</h3>
+            <p class="card-desc">Our master tailor visits your residence in Visakhapatnam or Pendurthi to measure body parameters and pick up fabric.</p>
+            <div style="margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border);">
+              <span style="font-weight: 700; font-size: 0.9rem; color: var(--accent);">HOME VISIT</span>
+              <a href="book-stitching.html" class="btn-text">Schedule Visit →</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 02. Three Collections / Service Offerings -->
-    <section class="section-padding" style="background-color: var(--bg-surface); border-bottom: 1px solid var(--border);">
+    <!-- 03. AEO STRUCTURED FAQ SECTION -->
+    <section class="section-padding hairline-bottom" style="background-color: var(--bg-white);">
       <div class="container">
         <div style="margin-bottom: var(--spacing-lg);">
-          <span class="text-caption">Three Ways to Wear</span>
-          <h2 style="margin-top: 0.4rem;">Curated for Every Saree Occasion</h2>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-md);">
-          <!-- Card 1 -->
-          <div class="card">
-            <div class="image-placeholder" style="aspect-ratio: 16 / 9;">
-              <span class="image-placeholder-label">PRODUCT IMAGE SLOT — READY STITCHED</span>
-            </div>
-            <h3 class="card-title">Ready-Stitched Blouses</h3>
-            <p class="card-desc">Instantly wearable blouses in standard sizing. Crafted in silk, handloom cotton, and Banarasi brocades with adjustable margin stitching.</p>
-            <a href="ready-made.html" class="btn-text">View Ready Catalog →</a>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="card">
-            <div class="image-placeholder" style="aspect-ratio: 16 / 9;">
-              <span class="image-placeholder-label">PRODUCT IMAGE SLOT — SIGNATURE COLLECTION</span>
-            </div>
-            <h3 class="card-title">Signature Savia Collection</h3>
-            <p class="card-desc">Exclusive in-house pattern designs created by Savia. Distinctive necklines, sleeve details, and hand-embroidered Maggam motifs.</p>
-            <a href="custom-blouses.html" class="btn-text">Discover Signature Patterns →</a>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="card">
-            <div class="image-placeholder" style="aspect-ratio: 16 / 9;">
-              <span class="image-placeholder-label">PRODUCT IMAGE SLOT — CUSTOM TAILORING</span>
-            </div>
-            <h3 class="card-title">Custom Stitching & Home Measurement</h3>
-            <p class="card-desc">Have a saree fabric ready? Our master tailors take your measurements at your doorstep in Visakhapatnam and Pendurthi for a custom fit.</p>
-            <a href="book-stitching.html" class="btn-text">Schedule Home Visit →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 03. Craftsmanship & Local Heritage Section -->
-    <section class="section-padding" style="background-color: var(--bg-white); border-bottom: 1px solid var(--border);">
-      <div class="container" style="display: grid; grid-template-columns: 1fr; gap: var(--spacing-lg);">
-        <div style="max-width: 720px;">
-          <span class="text-caption">Artisanal Craftsmanship</span>
-          <h2 style="margin-top: 0.4rem; margin-bottom: 1rem;">Tailoring Built on Precision, Thread & Fabric</h2>
-          <p style="margin-bottom: 1.25rem;">
-            At SAVIAA, we believe a well-stitched blouse transforms how a saree feels. Every seam is cut by experienced local Telugu tailors in Visakhapatnam who understand fabric weight, armhole ease, and neck drop balance.
-          </p>
-          <p>
-            Whether you choose a classic high-neck cut, a deep U-back, or intricate Zardozi Maggam work, we ensure comfortable seams, inner lining reinforcement, and zero-tug armholes.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04. AEO Structured FAQ Section -->
-    <section class="section-padding" style="background-color: var(--bg-surface); border-bottom: 1px solid var(--border);">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: var(--spacing-lg);">
-          <span class="text-caption">Clear Answers</span>
-          <h2 style="margin-top: 0.4rem;">Frequently Asked Questions</h2>
+          <span class="kicker">03 / ANSWER ENGINE SYSTEM</span>
+          <h2 style="margin-top: 0.25rem;">Frequently Asked Questions</h2>
         </div>
 
         <div class="faq-grid">
@@ -188,11 +203,6 @@
           <div class="faq-item">
             <h3 class="faq-question">How does doorstep blouse measurement work in Vizag and Pendurthi?</h3>
             <p class="faq-answer">Our master tailors visit your home in Visakhapatnam or Pendurthi to take exact body measurements, collect saree fabrics, discuss necklines and embroidery work, and deliver the finished, fitted blouse directly to your doorstep.</p>
-          </div>
-
-          <div class="faq-item">
-            <h3 class="faq-question">How long does custom blouse stitching take at SAVIAA?</h3>
-            <p class="faq-answer">Standard custom blouse stitching takes 7 to 9 days in Visakhapatnam. We also offer 48-hour express tailoring for urgent wedding or festival requirements.</p>
           </div>
         </div>
       </div>

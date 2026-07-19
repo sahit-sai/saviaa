@@ -1,5 +1,5 @@
 // ==========================================================================
-// SAVIAA GLOBAL COMMON JAVASCRIPT (Single Source of Truth Configuration)
+// SAVIAA SWISS GRID COMMON JAVASCRIPT (Single Source of Truth Config)
 // ==========================================================================
 
 const SAVIAA_CONFIG = {
@@ -24,8 +24,35 @@ const SAVIAA_CONFIG = {
 document.addEventListener('DOMContentLoaded', () => {
   injectNavLayouts();
   injectFooter();
-  initStickyHeader();
+  injectGridOverlay();
+  initGridToggleBtn();
 });
+
+// Grid Overlay HTML Injector
+function injectGridOverlay() {
+  if (document.getElementById('grid-overlay')) return;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'grid-overlay';
+  for (let i = 0; i < 12; i++) {
+    overlay.appendChild(document.createElement('div'));
+  }
+  document.body.appendChild(overlay);
+}
+
+// Toggle Grid Button
+function initGridToggleBtn() {
+  const btn = document.getElementById('toggle-grid-btn');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const overlay = document.getElementById('grid-overlay');
+      if (overlay) {
+        overlay.classList.toggle('visible');
+        btn.innerText = overlay.classList.contains('visible') ? 'HIDE 12-COL GRID' : 'SHOW 12-COL GRID';
+      }
+    });
+  }
+}
 
 // Navigation Layout HTML Injection
 function injectNavLayouts() {
@@ -73,7 +100,7 @@ function injectFooter() {
         <div class="footer-brand">
           <span class="footer-title">${SAVIAA_CONFIG.brandName}</span>
           <p class="footer-desc">${SAVIAA_CONFIG.fullName}. Handcrafted saree blouse tailoring with doorstep measurement visits across Visakhapatnam & Pendurthi.</p>
-          <div class="footer-contact-info" style="margin-top: 1rem; font-size: 0.875rem; color: rgba(255,255,255,0.75); display: flex; flex-direction: column; gap: 0.4rem;">
+          <div class="footer-contact-info" style="margin-top: 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.75); display: flex; flex-direction: column; gap: 0.4rem;">
             <p><strong>Address:</strong> ${SAVIAA_CONFIG.address}</p>
             <p><strong>Primary / WhatsApp:</strong> <a href="tel:+917842410691" style="color: var(--accent); text-decoration: underline;">${SAVIAA_CONFIG.phoneFormattedPrimary}</a></p>
             <p><strong>Secondary Phone:</strong> <a href="tel:+919182743352" style="color: var(--accent); text-decoration: underline;">${SAVIAA_CONFIG.phoneFormattedSecondary}</a></p>
@@ -100,7 +127,7 @@ function injectFooter() {
           </ul>
         </div>
         <div class="footer-links-col">
-          <span class="footer-links-title">Connect & Direct Support</span>
+          <span class="footer-links-title">Connect & Support</span>
           <ul class="footer-links">
             <li><a href="${SAVIAA_CONFIG.whatsappUrl}" target="_blank" rel="noopener">WhatsApp Styling Inquiry</a></li>
             <li><a href="${SAVIAA_CONFIG.instagramUrl}" target="_blank" rel="noopener">Instagram (${SAVIAA_CONFIG.instagram})</a></li>
@@ -118,18 +145,4 @@ function injectFooter() {
       </div>
     `;
   }
-}
-
-// Sticky Header
-function initStickyHeader() {
-  const header = document.querySelector('.header');
-  if (!header) return;
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
 }
